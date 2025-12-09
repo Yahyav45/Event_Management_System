@@ -1,0 +1,103 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{#{% extends 'vendor/vendor index.html' %}#}
+{#{% block body %}#}
+{#<body>#}
+{#<form id="form1" name="form1" method="post" action="/myapp/addwedding_post/" enctype="multipart/form-data">#}
+{#    {% csrf_token %}#}
+{##}
+{#  <table class="table table-bordered">#}
+{#    <tr>#}
+{#      <td>NAME</td>#}
+{#      <td><input type="text" name="textfield" id="textfield" class="form-control"/></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>PHOTO</td>#}
+{#      <td><input type="file" name="imageField" id="imageField" src="IMG" class="form-control"/></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>VIDEO</td>#}
+{#      <td><input type="file" name="imageField2" id="imageField2" src="VID" class="form-control"/></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>DESCRIPTION</td>#}
+{#      <td>#}
+{#      <textarea name="textarea" id="textarea" cols="45" rows="5"class="form-control"></textarea></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td colspan="2" ALIGN="CENTER"><input type="submit"  name="button" id="button" value="Submit" class="btn btn-info/></td>#}
+{#    </tr>#}
+{#  </table>#}
+{#</form>#}
+{#</body>#}
+{#{% endblock %}#}
+{#</html>#}
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<script>
+function validateForm() {
+    var name = document.getElementById("textfield").value;
+    var photo = document.getElementById("imageField").value;
+    var video = document.getElementById("imageField2").value;
+    var description = document.getElementById("textarea").value;
+
+    if (name == "") {
+        alert("Please enter a name.");
+        return false;
+    }
+    if (photo == "") {
+        alert("Please upload a photo.");
+        return false;
+    }
+    if (video == "") {
+        alert("Please upload a video.");
+        return false;
+    }
+    if (description == "") {
+        alert("Please enter a description.");
+        return false;
+    }
+    return true;
+}
+</script>
+</head>
+{% extends 'vendor/vendor index.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="/myapp/addwedding_post/" enctype="multipart/form-data" onsubmit="return validateForm()">
+    {% csrf_token %}
+  <table class="table table-bordered">
+    <tr>
+      <td>NAME</td>
+      <td><input type="text" name="textfield" id="textfield" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>PHOTO</td>
+      <td><input type="file" name="imageField" id="imageField" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>VIDEO</td>
+      <td><input type="file" name="imageField2" id="imageField2" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>DESCRIPTION</td>
+      <td>
+      <textarea name="textarea" id="textarea" cols="45" rows="5" class="form-control"></textarea></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center"><input type="submit" name="button" id="button" value="Submit" class="btn btn-info"/></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}
+</html>

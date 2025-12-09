@@ -1,0 +1,100 @@
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>Title</title>#}
+{#</head>#}
+{#<body>#}
+{##}
+{#</body>#}
+{#</html><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{#{% extends 'vendor/vendor index.html' %}#}
+{#{% block body %}#}
+{#<body>#}
+{#<form id="form1" name="form1" method="post" action="/myapp/editgallery_post/" enctype="multipart/form-data">#}
+{#    {% csrf_token %}#}
+{#    <input type="hidden" name="id" value="{{ data.id }}" class="form-control">#}
+{#  <table width="200" border="1">#}
+{#    <tr>#}
+{#      <td>PHOTO</td>#}
+{#      <td><img src="{{ data.filename }}" width="90" height="90">#}
+{#          <input type="file" name="imageField" id="imageField" src="img" class="form-control"/></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>VIDEO</td>#}
+{#      <td><video width="320" height="240" controls>#}
+{#  <source src="{{ data.video }}" type="video/mp4">#}
+{#</video>#}
+{#          <input type="file" name="imageField2" id="imageField2" src="VIDEO" class="form-control"/></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>DESCRIPTION</td>#}
+{#      <td><input type="text" name="textfield" id="textfield" value="{{ data.description }}" class="form-control"/></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td colspan="2"><div align="center">#}
+{#        <input type="submit" name="button" id="button" value="Submit" class="btn btn-infon"/>#}
+{#      </div></td>#}
+{#    </tr>#}
+{#  </table>#}
+{#</form>#}
+{#</body>#}
+{#{% endblock %}#}
+{#</html>#}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function validateForm() {
+            var imageField = document.forms["form1"]["imageField"].value;
+            var imageField2 = document.forms["form1"]["imageField2"].value;
+            var description = document.forms["form1"]["textfield"].value;
+
+            if (imageField == "" && imageField2 == "" && description == "") {
+                alert("Please fill out at least one field before submitting.");
+                return false;
+            }
+        }
+    </script>
+</head>
+{% extends 'vendor/vendor index.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="/myapp/editgallery_post/" enctype="multipart/form-data" onsubmit="return validateForm()">
+    {% csrf_token %}
+    <input type="hidden" name="id" value="{{ data.id }}" class="form-control">
+  <table width="200" border="1">
+    <tr>
+      <td>PHOTO</td>
+      <td><img src="{{ data.filename }}" width="90" height="90">
+          <input type="file" name="imageField" id="imageField" src="img" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>VIDEO</td>
+      <td><video width="320" height="240" controls>
+  <source src="{{ data.video }}" type="video/mp4">
+</video>
+          <input type="file" name="imageField2" id="imageField2" src="VIDEO" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>DESCRIPTION</td>
+      <td><input type="text" name="textfield" id="textfield" value="{{ data.description }}" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td colspan="2"><div align="center">
+        <input type="submit" name="button" id="button" value="Submit" class="btn btn-infon"/>
+      </div></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}
+</html>

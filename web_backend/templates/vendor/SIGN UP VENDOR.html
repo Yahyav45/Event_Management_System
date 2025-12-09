@@ -1,0 +1,493 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+{#<form id="form1" name="form1" method="post" action="/myapp/signupvendor_post/" enctype="multipart/form-data">#}
+{#    {% csrf_token %}#}
+{#  <table width="200" border="1">#}
+{#    <tr>#}
+{#      <td>USER NAME</td>#}
+{#      <td><input type="text" name="textfield" id="textfield" /></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>CONTACT NO</td>#}
+{#      <td><input type="text" name="textfield2" id="textfield2" /></td>#}
+{#    </tr>#}
+{#       <tr>#}
+{#      <td>CATEGORY</td>#}
+{#      <td>#}
+{#          <select name="cat" required>#}
+{#              <option disabled selected value="">Select a category</option>#}
+{#              <option>FOOD</option>#}
+{#              <option>BEAUTICIAN</option>#}
+{#              <option>DECORATION</option>#}
+{#              <option>INVITING TEAM</option>#}
+{#              <option>MUSIC & DJ</option>#}
+{#              <option>PHOTOGRAPHY</option>#}
+{#              <option>FASHION DESIGNER</option>#}
+{#              <option>DESTINATION </option>#}
+{#          </select>#}
+{#      </td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>LOCATION</td>#}
+{#      <td><input type="text" name="textfield3" id="textfield3" /></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>EXPERINCE</td>#}
+{#      <td><input type="text" name="textfield4" id="textfield4" /></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>E MAIL</td>#}
+{#      <td><input type="text" name="textfield5" id="textfield5" /></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>PLACE</td>#}
+{#      <td><input type="text" name="textfield6" id="textfield6" /></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>POST</td>#}
+{#      <td><input type="text" name="textfield7" id="textfield7" /></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>PIN</td>#}
+{#      <td><input type="text" name="textfield8" id="textfield8" /></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>DISTRICT</td>#}
+{#      <td><input type="text" name="textfield9" id="textfield9" /></td>#}
+{#    </tr>#}
+{#       <tr>#}
+{#          <td>Photo</td>#}
+{#          <td><input type="file" name="photo" ></td>#}
+{#      </tr>#}
+{#       <tr>#}
+{#      <td>PASSWORD</td>#}
+{#      <td><input type="password" name="textfield10" id="textfield9" /></td>#}
+{#    </tr>#}
+{#      <tr>#}
+{#      <td>CONFIRM PASSWORD</td>#}
+{#      <td><input type="password" name="textfield11" id="textfield9" /></td>#}
+{#    </tr>#}
+{##}
+{##}
+{##}
+{#    <tr>#}
+{#      <td ALIGN="CENTER" colspan="2"><input type="submit" name="button" id="button" value="Submit" /></td>#}
+{#    </tr>#}
+{#  </table>#}
+{#</form>#}
+{#</body>#}
+{#</html>#}
+{##}
+{#<!DOCTYPE html>#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />#}
+{#<title>Vendor Signup</title>#}
+{#<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">#}
+{#<style>#}
+{#    body {#}
+{#        background-color: #f8f9fa;#}
+{#    }#}
+{#    .container {#}
+{#        max-width: 600px;#}
+{#        margin-top: 20px;#}
+{#        background: white;#}
+{#        padding: 20px;#}
+{#        border-radius: 10px;#}
+{#        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);#}
+{#    }#}
+{#</style>#}
+{#</head>#}
+{#<body>#}
+{#<div class="container">#}
+{#    <h2 class="text-center mb-4">Vendor Signup</h2>#}
+{#    <form id="form1" name="form1" method="post" action="/myapp/signupvendor_post/" enctype="multipart/form-data">#}
+{#        {% csrf_token %}#}
+{#        <div class="mb-3">#}
+{#            <label class="form-label">USER NAME</label>#}
+{#            <input type="text" name="textfield" class="form-control" required>#}
+{#        </div>#}
+{#        <div class="mb-3">#}
+{#            <label class="form-label">CONTACT NO</label>#}
+{#            <input type="text" name="textfield2" class="form-control" required>#}
+{#        </div>#}
+{#        <div class="mb-3">#}
+{#            <label class="form-label">CATEGORY</label>#}
+{#            <select name="cat" class="form-select" required>#}
+{#                <option disabled selected value="">Select a category</option>#}
+{#                <option>FOOD</option>#}
+{#                <option>BEAUTICIAN</option>#}
+{#                <option>DECORATION</option>#}
+{#                <option>INVITING TEAM</option>#}
+{#                <option>MUSIC & DJ</option>#}
+{#                <option>PHOTOGRAPHY</option>#}
+{#                <option>FASHION DESIGNER</option>#}
+{#                <option>DESTINATION</option>#}
+{#            </select>#}
+{#        </div>#}
+{#        <div class="mb-3">#}
+{#            <label class="form-label">LOCATION</label>#}
+{#            <input type="text" name="textfield3" class="form-control" required>#}
+{#        </div>#}
+{#        <div class="mb-3">#}
+{#            <label class="form-label">EXPERIENCE</label>#}
+{#            <input type="text" name="textfield4" class="form-control" required>#}
+{#        </div>#}
+{#        <div class="mb-3">#}
+{#            <label class="form-label">EMAIL</label>#}
+{#            <input type="email" name="textfield5" class="form-control" required>#}
+{#        </div>#}
+{#        <div class="mb-3">#}
+{#            <label class="form-label">PLACE</label>#}
+{#            <input type="text" name="textfield6" class="form-control" required>#}
+{#        </div>#}
+{#        <div class="mb-3">#}
+{#            <label class="form-label">POST</label>#}
+{#            <input type="text" name="textfield7" class="form-control" required>#}
+{#        </div>#}
+{#        <div class="mb-3">#}
+{#            <label class="form-label">PIN</label>#}
+{#            <input type="text" name="textfield8" class="form-control" required>#}
+{#        </div>#}
+{#        <div class="mb-3">#}
+{#            <label class="form-label">DISTRICT</label>#}
+{#            <input type="text" name="textfield9" class="form-control" required>#}
+{#        </div>#}
+{#        <div class="mb-3">#}
+{#            <label class="form-label">PHOTO</label>#}
+{#            <input type="file" name="photo" class="form-control">#}
+{#        </div>#}
+{#        <div class="mb-3">#}
+{#            <label class="form-label">PASSWORD</label>#}
+{#            <input type="password" name="textfield10" class="form-control" required>#}
+{#        </div>#}
+{#        <div class="mb-3">#}
+{#            <label class="form-label">CONFIRM PASSWORD</label>#}
+{#            <input type="password" name="textfield11" class="form-control" required>#}
+{#        </div>#}
+{#        <div class="text-center">#}
+{#            <button type="submit" class="btn btn-primary">Submit</button>#}
+{#        </div>#}
+{#    </form>#}
+{#</div>#}
+{#<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>#}
+{#</body>#}
+{#</html>#}
+{##}
+{#<!DOCTYPE html>#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />#}
+{#<title>Vendor Signup</title>#}
+{#<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">#}
+{#<style>#}
+{#    body {#}
+{#        background-color: #f8f9fa;#}
+{#    }#}
+{#    .container {#}
+{#        max-width: 600px;#}
+{#        margin-top: 20px;#}
+{#        background: white;#}
+{#        padding: 20px;#}
+{#        border-radius: 10px;#}
+{#        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);#}
+{#    }#}
+{#</style>#}
+{#</head>#}
+{#<body>#}
+{#<div class="container">#}
+{#    <h2 class="text-center mb-4">Vendor Signup</h2>#}
+{#    <form id="form1" name="form1" method="post" action="/myapp/signupvendor_post/" enctype="multipart/form-data">#}
+{#        {% csrf_token %}#}
+{#        <div class="mb-3">#}
+{#            <label class="form-label">USER NAME</label>#}
+{#            <input type="text" name="textfield" class="form-control" required>#}
+{#        </div>#}
+{#        <div class="mb-3">#}
+{#            <label class="form-label">CONTACT NO</label>#}
+{#            <input type="text" name="textfield2" class="form-control" required>#}
+{#        </div>#}
+{#        <div class="mb-3">#}
+{#            <label class="form-label">CATEGORY</label>#}
+{#            <select name="cat" class="form-select" required>#}
+{#                <option disabled selected value="">Select a category</option>#}
+{#                <option>FOOD</option>#}
+{#                <option>BEAUTICIAN</option>#}
+{#                <option>DECORATION</option>#}
+{#                <option>INVITING TEAM</option>#}
+{#                <option>MUSIC & DJ</option>#}
+{#                <option>PHOTOGRAPHY</option>#}
+{#                <option>FASHION DESIGNER</option>#}
+{#                <option>DESTINATION</option>#}
+{#            </select>#}
+{#        </div>#}
+{#        <div class="mb-3">#}
+{#            <label class="form-label">LOCATION</label>#}
+{#            <input type="text" name="textfield3" class="form-control" required>#}
+{#        </div>#}
+{#        <div class="mb-3">#}
+{#            <label class="form-label">EXPERIENCE</label>#}
+{#            <input type="text" name="textfield4" class="form-control" required>#}
+{#        </div>#}
+{#        <div class="mb-3">#}
+{#            <label class="form-label">EMAIL</label>#}
+{#            <input type="email" name="textfield5" class="form-control" required>#}
+{#        </div>#}
+{#        <div class="mb-3">#}
+{#            <label class="form-label">PLACE</label>#}
+{#            <input type="text" name="textfield6" class="form-control" required>#}
+{#        </div>#}
+{#        <div class="mb-3">#}
+{#            <label class="form-label">POST</label>#}
+{#            <input type="text" name="textfield7" class="form-control" required>#}
+{#        </div>#}
+{#        <div class="mb-3">#}
+{#            <label class="form-label">PIN</label>#}
+{#            <input type="text" name="textfield8" class="form-control" required>#}
+{#        </div>#}
+{#        <div class="mb-3">#}
+{#            <label class="form-label">DISTRICT</label>#}
+{#            <input type="text" name="textfield9" class="form-control" required>#}
+{#        </div>#}
+{#        <div class="mb-3">#}
+{#            <label class="form-label">PHOTO</label>#}
+{#            <input type="file" name="photo" class="form-control">#}
+{#        </div>#}
+{#        <div class="mb-3">#}
+{#            <label class="form-label">PASSWORD</label>#}
+{#            <input type="password" name="textfield10" class="form-control" required>#}
+{#        </div>#}
+{#        <div class="mb-3">#}
+{#            <label class="form-label">CONFIRM PASSWORD</label>#}
+{#            <input type="password" name="textfield11" class="form-control" required>#}
+{#        </div>#}
+{#        <div class="text-center">#}
+{#            <button type="submit" class="btn btn-primary">Submit</button>#}
+{#        </div>#}
+{#    </form>#}
+{#</div>#}
+{##}
+{#<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>#}
+{##}
+{#<script>#}
+{#document.getElementById("form1").addEventListener("submit", function(event) {#}
+{#    let form = event.target;#}
+{#    let contactNo = form["textfield2"].value;#}
+{#    let email = form["textfield5"].value;#}
+{#    let pin = form["textfield8"].value;#}
+{#    let password = form["textfield10"].value;#}
+{#    let confirmPassword = form["textfield11"].value;#}
+{#    let fileInput = form["photo"];#}
+{##}
+{#    // Validate Contact Number (Only digits and 10 characters)#}
+{#    if (!/^\d{10}$/.test(contactNo)) {#}
+{#        alert("Contact number must be exactly 10 digits.");#}
+{#        event.preventDefault();#}
+{#        return;#}
+{#    }#}
+{##}
+{#    // Validate Email#}
+{#    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {#}
+{#        alert("Please enter a valid email address.");#}
+{#        event.preventDefault();#}
+{#        return;#}
+{#    }#}
+{##}
+{#    // Validate PIN Code (Only digits and 6 characters)#}
+{#    if (!/^\d{6}$/.test(pin)) {#}
+{#        alert("PIN must be exactly 6 digits.");#}
+{#        event.preventDefault();#}
+{#        return;#}
+{#    }#}
+{##}
+{#    // Validate Password Match#}
+{#    if (password !== confirmPassword) {#}
+{#        alert("Passwords do not match.");#}
+{#        event.preventDefault();#}
+{#        return;#}
+{#    }#}
+{##}
+{#    // Validate File Upload#}
+{#    if (fileInput.files.length === 0) {#}
+{#        alert("Please upload a photo.");#}
+{#        event.preventDefault();#}
+{#        return;#}
+{#    }#}
+{##}
+{#    alert("Form submitted successfully!");#}
+{#});#}
+{#</script>#}
+{##}
+{#</body>#}
+{#</html>#}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Vendor Signup</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
+    .container {
+        max-width: 600px;
+        margin-top: 20px;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h2 class="text-center mb-4">Vendor Signup</h2>
+    <form id="form1" name="form1" method="post" action="/myapp/signupvendor_post/" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label class="form-label">USER NAME</label>
+            <input type="text" name="textfield" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">CONTACT NO</label>
+            <input type="text" name="textfield2" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">CATEGORY</label>
+            <select name="cat" class="form-select" required>
+                <option disabled selected value="">Select a category</option>
+                <option>FOOD</option>
+                <option>BEAUTICIAN</option>
+                <option>DECORATION</option>
+                <option>INVITING TEAM</option>
+                <option>MUSIC & DJ</option>
+                <option>PHOTOGRAPHY</option>
+                <option>FASHION DESIGNER</option>
+                <option>DESTINATION</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">LOCATION</label>
+            <input type="text" name="textfield3" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">EXPERIENCE</label>
+            <input type="text" name="textfield4" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">EMAIL</label>
+            <input type="email" name="textfield5" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">PLACE</label>
+            <input type="text" name="textfield6" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">POST</label>
+            <input type="text" name="textfield7" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">PIN</label>
+            <input type="text" name="textfield8" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">DISTRICT</label>
+            <input type="text" name="textfield9" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">PHOTO</label>
+            <input type="file" name="photo" class="form-control">
+        </div>
+         <div class="mb-3">
+            <label class="form-label">VALID VENDOR ID PROOF</label>
+            <input type="file" name="vendorid" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">PASSWORD</label>
+            <input type="password" name="textfield10" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">CONFIRM PASSWORD</label>
+            <input type="password" name="textfield11" class="form-control" required>
+        </div>
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="termsCheck" required>
+            <label class="form-check-label" for="termsCheck">I agree to the <a href="/myapp/termsandconditions/" >Terms and Conditions</a></label>
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+document.getElementById("form1").addEventListener("submit", function(event) {
+    let form = event.target;
+    let contactNo = form["textfield2"].value;
+    let email = form["textfield5"].value;
+    let pin = form["textfield8"].value;
+    let password = form["textfield10"].value;
+    let confirmPassword = form["textfield11"].value;
+    let fileInput = form["photo"];
+    let fileInput = form["vendorid"];
+
+    // Validate Contact Number (Only digits and 10 characters)
+    if (!/^\d{10}$/.test(contactNo)) {
+        alert("Contact number must be exactly 10 digits.");
+        event.preventDefault();
+        return;
+    }
+
+    // Validate Email
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        alert("Please enter a valid email address.");
+        event.preventDefault();
+        return;
+    }
+
+    // Validate PIN Code (Only digits and 6 characters)
+    if (!/^\d{6}$/.test(pin)) {
+        alert("PIN must be exactly 6 digits.");
+        event.preventDefault();
+        return;
+    }
+
+    // Validate Password Match
+    if (password !== confirmPassword) {
+        alert("Passwords do not match.");
+        event.preventDefault();
+        return;
+    }
+
+    // Validate File Upload
+    if (fileInput.files.length === 0) {
+        alert("Please upload a photo.");
+        event.preventDefault();
+        return;
+    }
+
+    // Ensure Terms and Conditions checkbox is checked
+    let termsCheck = document.getElementById("termsCheck");
+    if (!termsCheck.checked) {
+        alert("You must agree to the Terms and Conditions.");
+        event.preventDefault();
+        return;
+    }
+
+    alert("Form submitted successfully!");
+});
+</script>
+
+</body>
+</html>
+

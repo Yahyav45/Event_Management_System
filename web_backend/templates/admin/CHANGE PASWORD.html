@@ -1,0 +1,99 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{#{% extends 'admin/admin index.html' %}#}
+{#{% block body %}#}
+{#<body>#}
+{#<form id="form1" name="form1" method="post" action="/myapp/changepassword_post/">#}
+{#    {% csrf_token %}#}
+{#  <p>CHANGE PASSWORD</p>#}
+{#  <table class="table table-bordered">#}
+{#    <tr>#}
+{#      <td><p>OLD PASSWORD</p></td>#}
+{#      <td><input type="password" name="textfield" id="textfield"  class="form-control" /></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>NEW PASSWORD</td>#}
+{#      <td><input type="password" name="textfield2" id="textfield2"  class="form-control"/></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>CONFIRM PASSWORD</td>#}
+{#      <td><input type="password" name="textfield3" id="textfield3"  class="form-control"/></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td colspan="2"><input type="submit" name="button" id="button" value="CHANGE PASSWORD"  class="form-control"/></td>#}
+{#    </tr>#}
+{#  </table>#}
+{#  <p>&nbsp;</p>#}
+{#</form>#}
+{#</body>#}
+{#{% endblock %}#}
+{#</html>#}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<script>
+function validateForm() {
+    var oldPassword = document.getElementById("textfield").value;
+    var newPassword = document.getElementById("textfield2").value;
+    var confirmPassword = document.getElementById("textfield3").value;
+
+    if (oldPassword == "") {
+        alert("Please enter your old password.");
+        return false;
+    }
+    if (newPassword == "") {
+        alert("Please enter a new password.");
+        return false;
+    }
+    if (confirmPassword == "") {
+        alert("Please confirm your new password.");
+        return false;
+    }
+    if (newPassword.length < 6) {
+        alert("New password must be at least 6 characters long.");
+        return false;
+    }
+    if (newPassword !== confirmPassword) {
+        alert("New password and confirm password do not match.");
+        return false;
+    }
+    return true;
+}
+</script>
+</head>
+{% extends 'admin/admin index.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="/myapp/changepassword_post/" onsubmit="return validateForm()">
+    {% csrf_token %}
+  <p>CHANGE PASSWORD</p>
+  <table class="table table-bordered">
+    <tr>
+      <td><p>OLD PASSWORD</p></td>
+      <td><input type="password" name="textfield" id="textfield"  class="form-control" /></td>
+    </tr>
+    <tr>
+      <td>NEW PASSWORD</td>
+      <td><input type="password" name="textfield2" id="textfield2"  class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>CONFIRM PASSWORD</td>
+      <td><input type="password" name="textfield3" id="textfield3"  class="form-control"/></td>
+    </tr>
+    <tr>
+      <td colspan="2"><input type="submit" name="button" id="button" value="CHANGE PASSWORD"  class="form-control"/></td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+</form>
+</body>
+{% endblock %}
+</html>
+
